@@ -1,0 +1,10 @@
+[info]
+title=Suggest Untitled Filename
+desc=On saving untitled document, plugin suggests (in the "Save as" dialog) file name from the first 10 text lines of document. With replacing spaces with '_'.
+type=cudatext-plugin
+subdir=cuda_suggest_new
+homepage=https://github.com/CudaText-addons/cuda_suggest_new
+
+[item1]
+section=events
+events=on_save_naming
