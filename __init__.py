@@ -1,6 +1,4 @@
-import os
-from cudatext import *
-
+#It don't need imports
 MAX_LINES = 10
 
 class Command:
