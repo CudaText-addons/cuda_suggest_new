@@ -6,5 +6,5 @@ So if the first non-empty line is " aa bb cc", plugin will make the filename "aa
 
 File extension (e.g. ".md") is added automatically by CudaText, from the active lexer.
 
-Author: Alexey (CudaText)
+Author: Alexey Torgashin (CudaText)
 License: MIT
