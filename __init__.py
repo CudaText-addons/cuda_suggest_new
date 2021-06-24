@@ -1,5 +1,11 @@
-#It don't need imports
 MAX_LINES = 10
+BADS = ' \t?\'"/\\`*<>'
+
+def mask_chars(s, chars):
+
+    for ch in chars:
+        s = s.replace(ch, '_')
+    return s
 
 class Command:
     
@@ -9,4 +15,4 @@ class Command:
         for i in range(min(MAX_LINES, cnt)):
             line = ed_self.get_text_line(i).strip()
             if line:
-                return line.replace(' ', '_').replace('\t', '_')
+                return mask_chars(line, BADS)
