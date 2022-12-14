@@ -1,3 +1,4 @@
+import os
 from cudatext import *
 
 MAX_LINES = 10
@@ -31,3 +32,8 @@ class Command:
     def on_open(self, ed_self):
 
         self.on_change_slow(ed_self)
+
+    def on_save(self, ed_self):
+
+        fn = ed_self.get_filename()
+        ed_self.set_prop(PROP_TAB_TITLE, os.path.basename(fn))
