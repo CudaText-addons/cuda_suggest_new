@@ -2,6 +2,7 @@ from cudatext import *
 
 MAX_LINES = 10
 BADS = ' \t?\'"/\\`*<>'
+REASON_API = app_api_version()>='1.0.438'
 
 def mask_chars(s, chars):
 
@@ -26,7 +27,12 @@ class Command:
     def on_change_slow(self, ed_self):
 
         if not ed_self.get_filename():
+            if REASON_API:
+                if ed_self.get_prop(PROP_TAB_TITLE_REASON, '') in ('s', 'p'):
+                    return
             ed_self.set_prop(PROP_TAB_TITLE, self.get_title(ed_self))
+            if REASON_API:
+                ed_self.set_prop(PROP_TAB_TITLE_REASON, 'u')
 
     def on_open(self, ed_self):
 

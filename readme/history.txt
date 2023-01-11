@@ -1,3 +1,6 @@
+2023.01.11
++ add: on CudaText 1.182+, plugin properly skips ui-tabs with special titles, like "Welcome"/"RegEx matches"
+
 2022.12.10
 + add: handle on_change_slow and change titles of untitled tabs
 
