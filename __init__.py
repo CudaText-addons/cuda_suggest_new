@@ -41,3 +41,11 @@ class Command:
     def on_save(self, ed_self):
 
         ed_self.set_prop(PROP_TAB_TITLE, '')
+
+    def on_state(self, ed_self, state):
+
+        if state==APPSTATE_SESSION_LOAD:
+            for h in ed_handles():
+                e = Editor(h)
+                if e.get_filename()=='':
+                    self.on_change_slow(e)

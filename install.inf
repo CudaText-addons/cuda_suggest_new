@@ -7,4 +7,4 @@ homepage=https://github.com/CudaText-addons/cuda_suggest_new
 
 [item1]
 section=events
-events=on_save_naming,on_change_slow,on_open,on_save
+events=on_save_naming,on_change_slow,on_open,on_save,on_state
