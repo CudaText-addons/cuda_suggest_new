@@ -1,6 +1,8 @@
 from cudatext import *
 
 MAX_LINES = 10
+MAX_LEN = 150 # if length is bigger, line will be truncated with '...'
+MAX_LEN_TOTAL = 5000 # if length is bigger, line will be ignored
 BADS = ' \t?\'"/\\`*<>'
 REASON_API = app_api_version()>='1.0.438'
 
@@ -18,13 +20,13 @@ class Command:
 
     def get_title(self, ed_self):
 
-        MAX_LEN = 150
         cnt = ed_self.get_line_count()
         for i in range(min(MAX_LINES, cnt)):
-            line = ed_self.get_text_line(i).strip()
+            line = ed_self.get_text_line(i, MAX_LEN_TOTAL)
             if line:
                 if len(line)>MAX_LEN:
                     line = line[:MAX_LEN]+'...'
+                line = line.strip()
                 return mask_chars(line, BADS)
 
     def on_change_slow(self, ed_self):
