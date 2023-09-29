@@ -1,3 +1,6 @@
+2023.09.29
+- fix: Cud hangs if first file line has 15K characters, must truncate
+
 2023.04.07
 + add: react to initial app's session loading, and update ui-tab titles
 

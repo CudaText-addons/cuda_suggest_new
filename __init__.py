@@ -18,10 +18,13 @@ class Command:
 
     def get_title(self, ed_self):
 
+        MAX_LEN = 150
         cnt = ed_self.get_line_count()
         for i in range(min(MAX_LINES, cnt)):
             line = ed_self.get_text_line(i).strip()
             if line:
+                if len(line)>MAX_LEN:
+                    line = line[:MAX_LEN]+'...'
                 return mask_chars(line, BADS)
 
     def on_change_slow(self, ed_self):
