@@ -3,7 +3,7 @@ from cudatext import *
 MAX_LINES = 10
 MAX_LEN = 150 # if length is bigger, line will be truncated with '...'
 MAX_LEN_TOTAL = 5000 # if length is bigger, line will be ignored
-BADS = ' \t?\'"/\\`*<>'
+BADS = ' \t?\'"/\\`*<>:'
 REASON_API = app_api_version()>='1.0.438'
 
 def mask_chars(s, chars):
