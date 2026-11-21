@@ -31,7 +31,7 @@ class Command:
 
     def on_change_slow(self, ed_self):
 
-        if not ed_self.get_filename():
+        if not ed_self.get_prop(PROP_FN, ''):
             if REASON_API:
                 if ed_self.get_prop(PROP_TAB_TITLE_REASON, '') in ('s', 'p'):
                     return
@@ -52,5 +52,5 @@ class Command:
         if state==APPSTATE_SESSION_LOAD:
             for h in ed_handles():
                 e = Editor(h)
-                if e.get_filename()=='':
+                if e.get_prop(PROP_FN, '')=='':
                     self.on_change_slow(e)
